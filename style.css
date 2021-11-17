@@ -123,7 +123,8 @@ input[type="submit"]{
 }
 
 #profile img{
-  width: 100px;
+  width: 5.25rem;
+  height: 5.25rem;
   border-radius: 50%;
   display: block;
   margin-left:auto;
@@ -150,24 +151,27 @@ input[type="submit"]{
 }
 
 #down{
+  height: 3.75rem;
   padding: 10px;
-  display:flex;
+  display: flex;
   justify-content:space-between;
   background-color:#f4fcfd;
 }
 
 #posts{  
-  margin: 10px;
+  font-size: 0.75rem;
 }
 
 .counter{
+  font-size: 1.125rem;
   font-weight: bold;
   color : #56bed7;
 }
 
 #likes{
-  margin: 10px; 
-  margin-left:5px;
+  font-size: 0.75rem;
+  /* margin: 10px;  */
+  margin-left:10px;
 }
 
 #name{
@@ -178,13 +182,13 @@ input[type="submit"]{
  display: flex;
 }
 
-#log-out{
+/* #log-out{
   margin: 10px;
   font-size: 15px;
   border: 1px solid;
   color: #e9f4fb;
   outline: none;
-}
+} */
 
 .comments{
   max-width:55rem;
