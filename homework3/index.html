@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel = "stylesheet" href = "style.css"></link>
+    </head>
+    <body>
+        <div class = "main">
+            <h1>Meal List</h1>
+            <div class = "filterDiv">
+                <button class = "filterButton">Filter by name</button>
+                <button class = "filterButton">Filter by region</button>
+                <button class = "filterButton">Filter by category</button>
+            </div>
+            <ul class = "recipes">
+                <li>
+                    <div class = "recipeFlex">
+                        <div class = "recipeLeft">
+                            <img src = "recipeImg.jpg">
+                            <label>Croatian Beef Stew</label>
+                        </div>
+                        <div class = "recipeRight">
+                            <label>Beef, Croatian</label>
+                            <button class = "recipeButton" onclick = "showRecipe();">See Recipe</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class = "recipeFlex">
+                        <div class = "recipeLeft">
+                            <img src = "recipeImg.jpg">
+                            <label>Croatian Beef Stew</label>
+                        </div>
+                        <div class = "recipeRight">
+                            <label>Beef, Croatian</label>
+                            <button class = "recipeButton">See Recipe</button>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        
+        <div id = "modal">
+            <div id = "modalContent">
+                <h1>Recipe</h1>
+                <img class = "modalImg">
+                <p>daasdas ffdsfsfsdf dfwfdffds fdfdsfsfd</p>
+                <ul class = "modalTable">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src = "script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  border: 1px solid red;
+  box-sizing: border-box;
+  margin-left: 400px;
+  margin-top: 200px;
+  height: 768px;
+  width: 1336px;
+}
+
+header{
+  color:white;
+  background-image: linear-gradient(green, white);
+  padding-bottom: 20px;
+}
+
+.header1{
+  display: flex;
+}
+
+.menu{
+
+  padding: 10px;
+  border-style: dotted;
+ border-color: steelblue;
+
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+h2{
+  margin-top: 70px;
+  margin-left: 420px;
+  margin-right: 420px;
+}
+
+li:nth-child(odd){
+  background-color: rgb(255, 192, 202);
+}
+
+li:nth-child(even){
+  background-color: rgb(135, 206, 235);
+}
+
+.name{
+  display: block;
+  width: 75%;
+  margin-left: 40px;
+}
+
+.gradeContainer{
+  height: 40px;
+  margin-left: 0px;
+  margin-right : 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  padding-right: 5px;
+  padding-left: 40px;
+  justify-content: space-between; 
+}
+
+button{
+  width: 20%;
+  color : white;
+  border-style: dotted;
+  border-color: white;
+  padding: 15px 32px;
+  background-color: #CD873F;
+}  
+
+.nameContainer{
+  display: flex;
+}
+
+.grade{
+  width: 100px;
+}

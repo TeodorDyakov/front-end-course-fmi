@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+  <section class="wrapper">
+    <header class="header flex column">
+      <nav class="action-menu flex ">
+        <li class="menu-item flex h-center v-center close">&times;</li>
+        <li class="menu-item flex h-center v-center min">&minus;</li>
+        <li class="menu-item flex h-center v-center max">&plus;</li>
+      </nav>
+      <input class="input" value="0" />
+    </header>
+
+    <main class="calculator">
+      <div class="action-grid">
+        <button class="action action-btn op" id = "clear">C</button>
+        <button class="action action-btn op" id = "sqrt">&#8730;</button>
+        <button class="action action-btn op" id  = "pow">n<sup>2</sup></button>
+        <button class="action orange op" id = "divide">&divide;</button>
+        <button class="action num">7</button>
+        <button class="action num">8</button>
+        <button class="action num">9</button>
+        <button class="action orange op" id = "times">&times;</button>
+        <button class="action num">4</button>
+        <button class="action num">5</button>
+        <button class="action num">6</button>
+        <button class="action orange op" id = "minus">&minus;</button>
+        <button class="action num">1</button>
+        <button class="action num">2</button>
+        <button class="action num">3</button>
+        <button class="action orange op" id = "plus">&plus;</button>
+        <button class="action zero num">0</button>
+        <button class="action num">.</button>
+        <button class="action orange op" id = "equals">=</button>
+      </div>
+    </main> 
+  </section>
+
+  <section class="history-wrapper">
+    <header class="flex column h-center v-center">
+      <h1>История на калкулациите</h1>
+      <button class="clear">Изчистване</button>
+    </header>
+
+    <main>
+    
+      <ul class="calculation-list">
+      </ul>
+    
+    </main>
+  </section>
+  <script>
+    const numberButtons = document.querySelectorAll('.num');
+    
+    console.log(numberButtons);
+
+    for(let i = 0; i < numberButtons.length; i++){
+      numberButtons[i].addEventListener('click', function(){
+    writeNum(numberButtons[i].textContent);
+    });
+    }
+
+    const op = document.querySelectorAll('.op');
+    
+    for(let i = 0; i < op.length; i++){
+      op[i].addEventListener('click', function(){
+    writeop(op[i].id);
+    });
+    }
+    
+    const clear = document.querySelectorAll('.clear')[0];
+
+    clear.addEventListener('click', function(){
+    clearExpressions();
+    });
+  
+
+    var state = "0";
+    var toEval = "";
+    const map = {equals:"=", times:"*", divide:"/", minus:"-", plus:"+"};
+
+    const input = document.querySelectorAll('.input')[0];
+
+    var expressionIndex = 0;
+
+    var cnt = localStorage.getItem("expressionsCount");
+    console.log(cnt);
+    
+    for(let i = 0; i < cnt; i++){
+      const expressions = document.querySelectorAll('.calculation-list')[0];
+      var li = document.createElement("li");
+      li.textContent = localStorage.getItem("expression" + i);
+      expressions.appendChild(li);
+    }
+
+    function addExpression(exp){
+      localStorage.setItem("expression" + expressionIndex, exp);
+      localStorage.setItem("expressionsCount", expressionIndex + 1);
+      const expressions = document.querySelectorAll('.calculation-list')[0];
+      var li = document.createElement("li");
+      li.textContent = exp;
+      expressions.appendChild(li);
+      expressionIndex++;
+    }
+
+    function clearExpressions(){
+      const expressions = document.querySelectorAll('.calculation-list')[0];
+      expressions.innerHTML = "";
+      localStorage.clear(); 
+    }
+
+    function writeop(id){  
+        if(id == "pow"){
+          input.value = Math.pow(input.value, 2);
+          addExpression(input.value + "^2" +  "=" + input.value);
+        }else if(id == "sqrt"){
+          addExpression("√" + input.value +  "=" + input.value);
+          input.value = Math.sqrt(input.value);
+        }
+        else if(id == "clear"){
+          input.value = "";
+          state = "num";
+        }else if(id == "equals"){
+          toEval += input.value;
+          input.value = eval(toEval);
+          state = "operand";
+          addExpression(toEval + "=" + input.value);
+          toEval = "";
+        }else{
+          state = "operand";
+          toEval += input.value;
+          toEval += map[id];
+          console.log(toEval);
+        }
+    }
+
+    function writeNum(num){
+      console.log(input.value);
+      if(state == "0"){
+        input.value = "";
+        state = "num";
+      }
+      else if(state == "num"){
+      }
+
+      else if(state == "operand"){
+        input.value = "";
+        state = "num";
+      }
+
+      input.value += num;
+      console.log(toEval);
+    }
+
+  </script>
+</body>
+</html>

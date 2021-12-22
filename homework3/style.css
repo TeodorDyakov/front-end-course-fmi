@@ -1,0 +1,129 @@
+:root {
+    --color1: #FFFFFF;
+    --color2: #EAEAEA;
+    --color3: #C4C4C4;
+    --color4: #000000;
+    --fontsize1: 16px;
+    --fontsize2: 32px;
+    --borderradius1: 16px;
+    --borderradius2: 8px;
+    --spacing1: 16px;
+    --spacing2: 8px;
+    --opacity: 0.5;
+    --fontweight1: 700;
+    --fontweight2: 400;
+}
+
+.main{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    font-size: var(--fontsize1);
+    font-weight: var(--fontweight2);
+    margin: auto;   
+    background-color: var(--color1);
+    text-align: center; 
+    border:1px solid var(--color4);
+    border-radius: var(--borderradius1);
+}
+
+.filterButton{
+    width: 200px;
+    padding: 10px;
+    background-color: var(--color2);
+    margin: 10px;
+    text-align: left;
+    border:1px solid var(--color4);
+}
+
+button{
+    border-radius: var(--borderradius2);
+}
+
+h1{
+    border-top-left-radius: var(--borderradius1);
+    border-top-right-radius: var(--borderradius1);
+    padding-top: 10px;
+    margin-top: 0px;    
+    background-color: var(--color2);
+    border-bottom:1px solid var(--color4);
+}
+
+.filterDiv{
+    padding: 10px;
+    margin-left: var(--spacing1);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--borderradius2);
+    border:1px solid var(--color4);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.recipeFlex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipeRight{
+    /* text-align: center; */
+    display: flex;
+}
+
+.recipeLeft{
+    /* text-align: center; */
+    display: flex;
+}
+
+img{
+    width: 40px;
+}
+
+.recipeButton{
+    height: 40px;
+    background-color: var(--color3);
+    margin-left: var(--spacing1);
+    border:1px solid var(--color4);
+    font-weight: var(--fontweight1);
+}
+
+.recipes{
+    margin-left: var(--spacing1);
+    margin-right: var(--spacing1);
+    padding-left: 0px;
+    border:1px solid var(--color4);
+    border-radius: var(--borderradius2);
+}
+
+.recipes li{
+    border-bottom:1px solid var(--color4);
+    list-style: none;
+    padding: 10px;
+    font-weight: var(--fontweight1);
+}
+
+.recipes img{
+    margin-right: 10px;
+}
+
+#modalContent{
+ width: 40%;
+ margin:auto;
+ margin-top:50px;
+}
+
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
